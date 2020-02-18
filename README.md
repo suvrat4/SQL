@@ -21,12 +21,19 @@
 * INNER JOIN is most commonly used join in real time.
 
 --Syntax: SELECT <collist> FROM 
-  Table1, Table2, Tablen..
+  Table1, Table2, TableN..
   WHERE <join condition>
   AND < filter condition> ;
   
   ##### Guidelines:
   
 When writing a SELECT statement that join tables, precede the column name with table name or the table alias for faster access to avoid ambiguity.
-  
+
+###### Example:
+Display empno,ename,deptno,dname,loc?
+'''
+SELECT e.empno, e.ename, d.deptno, d.dname, d.loc
+FROM emp e, dept d
+WHERE e.deptno = d.deptno;
+'''
   
