@@ -2,7 +2,7 @@
 
 ## Joins
 
-* A join is a data retrival operation that combines rows from two or more tables, views, mererialized views. 
+* A join is a data retrival operation that combines rows from two or more tables, views, meterialized views. 
 
 * Oracle performs a join operation whenever multiple table appear in the from clause of the query.
 
@@ -36,4 +36,23 @@ SELECT e.empno, e.ename, d.deptno, d.dname, d.loc
 FROM emp e, dept d
 WHERE e.deptno = d.deptno;
 '''
-  
+### NOTE:
+* JOIN condition is specified by using ON clause or USING clause
+* Use USING clause if commnon column name is same.
+
+##### Using ON clause
+
+###### Examples using ON caluse:
+
+SELECT e.empno, e.ename, e.sal, d.dname, d.loc
+FROM emp e dept d
+ON (e.deptno = d.dept.no);
+
+###### Examples Using Using clause:
+
+SELECT e.empno, e.ename, e.sal, d.dname, d.loc
+FROM emp e JOIN dept d
+USING(deptno);
+
+### NOTE: 
+* In USING caluse common column name should not be prefixed with table alias.
