@@ -20,7 +20,8 @@
 * To perform INNER JOIN parent/child relatioship between the tables is not mandatory.
 * INNER JOIN is most commonly used join in real time.
 
---Syntax: SELECT <collist> FROM 
+*Syntax: 
+  SELECT <collist> FROM 
   Table1, Table2, TableN..
   WHERE <join condition>
   AND < filter condition> ;
@@ -56,3 +57,30 @@ USING(deptno);
 
 ### NOTE: 
 * In USING caluse common column name should not be prefixed with table alias.
+
+#### Non Equi Join:
+When the join condition is based on equality operator, the join is said to be an equi join. When the join condition is based on other than equality operator, the join is said be a non equi join.
+
+### NOTE:
+* In Non Equi Join JOIN condition is not based on = operator. It is based on other than = operator usually BETWEEN or > or < opeartors.
+
+*Syntax:
+    SELECT <collist> 
+    FROM TABLE1, TABLE2..
+    WHERE <join condition>[AND <join condition>]
+    AND <condition>;
+
+###### Examples:
+
+SELECT e.empno, e.ename, e.sal, s.grade
+FROM emp e, salgrade s
+WHERE e.sal BETWEEN s.losal AND s.hisal;
+
+
+SELECT e.empno,e.name,e.sal,d.name,d.loc,s.grade
+FROM emp e, dept d, salgrade s
+WHERE e.deptno = d.deptno
+AND
+e.sal BETWEEN g.losal AND g.hisal;
+
+
