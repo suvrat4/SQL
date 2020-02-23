@@ -254,10 +254,10 @@ RIGHT OUTER JOIN returns all rows(matched and unmatched) from right side table a
    
    Display various dnames along with total salary for each of the job where total salary is greater than 8000?
    
-  SQL> SELECT dname,sum(sal)
-  2    FROM emp JOIN dept
-  3    USING(deptno)
-  4    GROUP BY dname HAVING sum(sal)>8000;
+SQL> SELECT dname,sum(sal)
+2    FROM emp JOIN dept
+3    USING(deptno)
+4    GROUP BY dname HAVING sum(sal)>8000;
 
 DNAME            SUM(SAL)
 -------------- ----------
